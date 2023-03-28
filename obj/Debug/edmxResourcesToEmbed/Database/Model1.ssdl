@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ZeroHungerAssignmentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderLists">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Res_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Res_Location" Type="varchar" MaxLength="50" />
+    <Property Name="Food_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Max_Time" Type="datetime" />
+    <Property Name="Order_Status" Type="varchar" MaxLength="50" />
+    <Property Name="Order_Date" Type="datetime" />
+    <Property Name="Delivery_Man" Type="int" />
+  </EntityType>
+  <EntityContainer Name="ZeroHungerAssignmentModelStoreContainer">
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderLists" EntityType="Self.OrderLists" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

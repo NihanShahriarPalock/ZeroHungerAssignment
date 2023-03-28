@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "EditEmployee";
+}
+
+<h2 style="text-align:center">Update Employee Information</h2>
+
+    <form method="post">
+
+        
+     Employee ID:<input type="text" name="Id" class="form-control" value="@Model.Id" readonly />
+               
+     Name:<input type="text" name="Name" class="form-control" value="@Model.Name" />
+               
+     Email:<input type="text" name="Email" class="form-control" value="@Model.Email" /> 
+             
+     Age:<input type="text" name="Age" class="form-control" value="@Model.Age" />
+           
+     Gender:<input type="text" name="Gender" class="form-control" value="@Model.Gender" />
+            
+     <input type="submit" value="Update" class="btn btn-success" />
+            
+    </form>
+
+
