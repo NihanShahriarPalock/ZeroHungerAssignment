@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ZeroHungerAssignmentModelStoreContainer" CdmEntityContainer="ZeroHungerAssignmentEntities3">
+  <EntityContainerMapping StorageEntityContainer="ZeroHungerAssignmentModelStoreContainer" CdmEntityContainer="ZeroHungerAssignmentEntities4">
     <EntitySetMapping Name="Employees">
       <EntityTypeMapping TypeName="ZeroHungerAssignmentModel.Employee">
         <MappingFragment StoreEntitySet="Employees">
@@ -21,8 +21,6 @@
           <ScalarProperty Name="Food_Name" ColumnName="Food_Name" />
           <ScalarProperty Name="Max_Time" ColumnName="Max_Time" />
           <ScalarProperty Name="Order_Status" ColumnName="Order_Status" />
-          <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
-          <ScalarProperty Name="Delivery_Man" ColumnName="Delivery_Man" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

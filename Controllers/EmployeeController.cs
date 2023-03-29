@@ -17,12 +17,12 @@ namespace ZeroHungerAssignment.Controllers
 
         public ActionResult Employees()
         {
-            var db = new ZeroHungerAssignmentEntities3();
+            var db = new ZeroHungerAssignmentEntities4();
             return View(db.Employees.ToList());
         }
         public ActionResult List()
         {
-            var db = new ZeroHungerAssignmentEntities3();
+            var db = new ZeroHungerAssignmentEntities4();
             var Employees = db.Employees.ToList();
             return View(Employees);
         }
@@ -35,7 +35,7 @@ namespace ZeroHungerAssignment.Controllers
         [HttpPost]
         public ActionResult AddEmployees(Employee model)
         {
-            var db = new ZeroHungerAssignmentEntities3();
+            var db = new ZeroHungerAssignmentEntities4();
             db.Employees.Add(model);
             db.SaveChanges();
             TempData["Msg"] = "Employee Added Successfully";
@@ -45,7 +45,7 @@ namespace ZeroHungerAssignment.Controllers
 
         public ActionResult EditEmployee(int Id)
         {
-            var db = new ZeroHungerAssignmentEntities3();
+            var db = new ZeroHungerAssignmentEntities4();
             var emp = (from e in db.Employees
                       where e.Id == Id
                       select e).SingleOrDefault();
@@ -54,7 +54,7 @@ namespace ZeroHungerAssignment.Controllers
         [HttpPost]
         public ActionResult EditEmployee(Employee upemp)
         {
-            var db = new ZeroHungerAssignmentEntities3();
+            var db = new ZeroHungerAssignmentEntities4();
             var exst = (from e in db.Employees
                         where e.Id == upemp.Id
                         select e).SingleOrDefault();
@@ -76,7 +76,7 @@ namespace ZeroHungerAssignment.Controllers
         {
             var employee = new Employee() { Id = id };
 
-            using (var context = new ZeroHungerAssignmentEntities3())
+            using (var context = new ZeroHungerAssignmentEntities4())
             {
                 context.Employees.Attach(employee);
                 context.Employees.Remove(employee);

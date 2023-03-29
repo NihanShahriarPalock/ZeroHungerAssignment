@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ZeroHungerAssignment.Database.OrderList>
+
+@{
+    ViewBag.Title = "OrderLists";
+}
+
+<h2 style="text-align:center">All The Ordered Lists</h2>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            Order ID
+        </th>
+        <th>
+            Restaurent Name
+        </th>
+        <th>
+            Restaurent Location
+        </th>
+        <th>
+            Food Type
+        </th>
+        <th>
+            Maximum Time
+        </th>
+        <th>
+            Order Status
+        </th>
+
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Res_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Res_Location)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Food_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Max_Time)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Order_Status)
+    </td>
+
+</tr>
+}
+
+</table>

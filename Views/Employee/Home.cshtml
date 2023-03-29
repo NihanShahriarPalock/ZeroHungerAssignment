@@ -3,25 +3,41 @@
     ViewBag.Title = "Home";
 }
 
-<h2 style="text-align:center;">Employee Dash Board</h2>
+<h2 style="text-align:center; ">Employee Dash Board</h2>
 
-<td>
-    <table>
 
-        <tr>
+<head>
+<style>
+    .button {
+        background-color: #C0C0C0; 
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 30px;
+        margin: 4px 2px;
+        cursor: pointer;
+        
+    }
 
-            <td>@Html.ActionLink("Add New Employees", "AddEmployees")</td>
+    .button1 {
+        border-radius: 2px;
+    }
 
-        </tr>
+    .button2 {
+        border-radius: 4px;
+    }
 
-        <tr>
+</style>
+</head>
+<body>
 
-            <td>@Html.ActionLink("See Employee List", "List")</td>
 
-        </tr>
+    <button class="button button1">@Html.ActionLink("Add New Employees", "AddEmployees")</button>
+    <button class="button button2">@Html.ActionLink("See Employee List", "List")</button>
 
-       
 
-    </table>
-</td>
+</body>
 

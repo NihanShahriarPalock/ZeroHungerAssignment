@@ -13,10 +13,10 @@ namespace ZeroHungerAssignment.Database
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ZeroHungerAssignmentEntities3 : DbContext
+    public partial class ZeroHungerAssignmentEntities4 : DbContext
     {
-        public ZeroHungerAssignmentEntities3()
-            : base("name=ZeroHungerAssignmentEntities3")
+        public ZeroHungerAssignmentEntities4()
+            : base("name=ZeroHungerAssignmentEntities4")
         {
         }
     

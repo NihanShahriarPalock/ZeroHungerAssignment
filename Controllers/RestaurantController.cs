@@ -15,40 +15,32 @@ namespace ZeroHungerAssignment.Controllers
             return View();
         }
         [HttpGet]
-        public ActionResult MakeAnOrder()
+        public ActionResult OrderLists()
         {
-
-            return View();
-        }
-        [HttpPost]
-        public ActionResult MakeAnOrder(OrderList model)
-        {
-
-            var db = new ZeroHungerAssignmentEntities3();
-            db.OrderLists.Add(new OrderList
-                { 
-                Order_Status = "Waiting", 
-                Order_Date=DateTime.Now
-
-            });
-            var request = db.OrderLists.SingleOrDefault();
-            if (request != null)
-                request.Order_Status = "Pending";
-
-            db.SaveChanges();
-            return RedirectToAction("List", "Restaurant");
-        }
-
-        public ActionResult Orders()
-        {
-            var db = new ZeroHungerAssignmentEntities3();
+            var db = new ZeroHungerAssignmentEntities4();
             return View(db.OrderLists.ToList());
         }
         public ActionResult List()
         {
-            var db = new ZeroHungerAssignmentEntities3();
-            var OrderLists = db.OrderLists.ToList();
+            var db = new ZeroHungerAssignmentEntities4();
+            var OrderLists = db.Employees.ToList();
             return View(OrderLists);
+        }
+        [HttpGet]
+        public ActionResult MakeFoodRequest()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult MakeFoodRequest(OrderList model)
+        {
+            var db = new ZeroHungerAssignmentEntities4();
+            db.OrderLists.Add(model);
+            db.SaveChanges();
+            
+            return RedirectToAction("OrderLists", "Restaurant");
+
         }
 
 

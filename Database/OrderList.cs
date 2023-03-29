@@ -18,9 +18,7 @@ namespace ZeroHungerAssignment.Database
         public string Res_Name { get; set; }
         public string Res_Location { get; set; }
         public string Food_Name { get; set; }
-        public Nullable<System.DateTime> Max_Time { get; set; }
+        public string Max_Time { get; set; }
         public string Order_Status { get; set; }
-        public Nullable<System.DateTime> Order_Date { get; set; }
-        public Nullable<int> Delivery_Man { get; set; }
     }
 }

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ZeroHungerAssignment.Database.OrderList>
+
+@{
+    ViewBag.Title = "AllOrderedList";
+}
+
+<h2 style="text-align:center">All The Ordered List </h2>
+<h6>
+
+
+
+
+</h6>
+
+@if (TempData["Msg"] != null)
+{
+    <p class="alert alert-info">@TempData["Msg"]</p>
+}
+
+<table class="table text-muted">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            Restaurent Name
+        </th>
+        <th>
+            Restaurent Location
+        </th>
+        <th>
+            Food Type
+        </th>
+        <th>
+            Reservation Food Time
+        </th>
+        <th>
+            Order Status
+        </th>
+        <th>
+            Take Decision
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Res_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Res_Location)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Food_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Max_Time)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Order_Status)
+    </td>
+    <td>
+        @Html.ActionLink("Confirm", "Confirm", new { id = item.Id }) |
+
+        @Html.ActionLink("Cancel ", "Cancel", new { id = item.Id })
+    </td>
+</tr>
+    }
+
+</table>
